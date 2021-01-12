@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supervizorapps",
+  "info": {
+    "name": "supervizorapp",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "showdefectpanel": {
+      "type": "boolean"
+    },
+    "resolutionw": {
+      "type": "integer"
+    },
+    "resolutionh": {
+      "type": "integer"
+    }
+  }
+}

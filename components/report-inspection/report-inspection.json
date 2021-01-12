@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_report_inspection_report_inspections",
+  "info": {
+    "name": "report_inspection",
+    "icon": "bullseye"
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "good",
+        "bad"
+      ]
+    },
+    "evidence": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "operator_asigned_weld_id": {
+      "type": "integer"
+    },
+    "defect": {
+      "type": "string"
+    }
+  }
+}

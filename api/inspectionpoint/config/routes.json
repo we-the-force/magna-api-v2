@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/inspectionpoints",
+      "handler": "inspectionpoint.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inspectionpoints/count",
+      "handler": "inspectionpoint.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inspectionpoints/:id",
+      "handler": "inspectionpoint.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/inspectionpoints",
+      "handler": "inspectionpoint.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/inspectionpoints/:id",
+      "handler": "inspectionpoint.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/inspectionpoints/:id",
+      "handler": "inspectionpoint.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

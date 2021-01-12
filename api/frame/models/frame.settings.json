@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "frames",
+  "info": {
+    "name": "frame",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "model_name": {
+      "type": "string"
+    },
+    "model_number": {
+      "type": "string"
+    },
+    "reference": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "model_code": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "reports": {
+      "collection": "report"
+    },
+    "sectors": {
+      "collection": "sector",
+      "via": "frame"
+    },
+    "operator_id": {
+      "type": "string"
+    }
+  }
+}

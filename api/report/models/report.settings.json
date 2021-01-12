@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports",
+  "info": {
+    "name": "report",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "start_time": {
+      "type": "biginteger"
+    },
+    "finish_time": {
+      "type": "biginteger"
+    },
+    "frame_serial": {
+      "type": "string"
+    },
+    "report_inspection": {
+      "type": "component",
+      "repeatable": true,
+      "component": "report-inspection.report-inspection"
+    },
+    "model_number": {
+      "type": "string"
+    },
+    "operator_id": {
+      "type": "string"
+    },
+    "sector_id": {
+      "type": "string"
+    }
+  }
+}

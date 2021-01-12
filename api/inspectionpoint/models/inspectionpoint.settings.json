@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspectionpoints",
+  "info": {
+    "name": "inspectionpoint",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "sector": {
+      "model": "sector",
+      "via": "inspectionpoints"
+    },
+    "helper": {
+      "model": "helper"
+    },
+    "pointtype": {
+      "model": "pointtype"
+    }
+  }
+}

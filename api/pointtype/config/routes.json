@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pointtypes",
+      "handler": "pointtype.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pointtypes/count",
+      "handler": "pointtype.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pointtypes/:id",
+      "handler": "pointtype.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pointtypes",
+      "handler": "pointtype.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pointtypes/:id",
+      "handler": "pointtype.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pointtypes/:id",
+      "handler": "pointtype.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

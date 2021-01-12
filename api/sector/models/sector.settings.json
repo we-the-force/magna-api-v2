@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sectors",
+  "info": {
+    "name": "sector",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "frame": {
+      "via": "sectors",
+      "model": "frame"
+    },
+    "posx": {
+      "type": "float"
+    },
+    "posy": {
+      "type": "float"
+    },
+    "width": {
+      "type": "float"
+    },
+    "height": {
+      "type": "float"
+    },
+    "inspectionpoints": {
+      "via": "sector",
+      "collection": "inspectionpoint"
+    }
+  }
+}
