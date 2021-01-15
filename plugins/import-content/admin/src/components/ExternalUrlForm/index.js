@@ -9,7 +9,7 @@ class ExternalUrlForm extends Component {
     url: ""
   };
 
-  preAnalyzeImportFile = async url => {
+  preAnalyzeImportFile = async (url) => {
     this.setState({ url }, () => {
       this.props.onRequestAnalysis({ source: "url", options: { url } });
     });
