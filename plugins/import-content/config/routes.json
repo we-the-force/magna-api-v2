@@ -3,7 +3,7 @@
     {
       "method": "POST",
       "path": "/preAnalyzeImportFile",
-      "handler": "ImportContent.preAnalyzeImportFile",
+      "handler": "import-content.preAnalyzeImportFile",
       "config": {
         "policies": []
       }
