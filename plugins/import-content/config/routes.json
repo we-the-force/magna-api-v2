@@ -5,7 +5,7 @@
       "path": "/",
       "handler": "import-content.index",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -13,7 +13,7 @@
       "path": "/:importId",
       "handler": "import-content.delete",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/:importId/undo",
       "handler": "import-content.undo",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -29,7 +29,7 @@
           "path": "/",
           "handler": "import-content.create",
           "config": {
-            "policies": ["isAdmin"]
+            "policies": ["plugins::users-permissions.isAuthenticated"]
           }
     },
     {
@@ -37,7 +37,7 @@
       "path": "/importconfig",
       "handler": "ImportConfig.find",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -45,7 +45,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.findOne",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/importconfig/count",
       "handler": "ImportConfig.count",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -61,7 +61,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.update",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -69,7 +69,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.delete",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -77,7 +77,7 @@
       "path": "/importeditem",
       "handler": "ImportedItem.find",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -85,7 +85,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.findOne",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -93,7 +93,7 @@
       "path": "/importeditem/count",
       "handler": "ImportedItem.count",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -101,7 +101,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.update",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     },
     {
@@ -109,7 +109,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.delete",
       "config": {
-        "policies": ["isAdmin"]
+        "policies": ["plugins::users-permissions.isAuthenticated"]
       }
     }
   ]
