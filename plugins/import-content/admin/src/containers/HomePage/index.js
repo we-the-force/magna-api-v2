@@ -2,9 +2,10 @@ import React, { memo, Component } from "react";
 import {request} from "strapi-helper-plugin";
 import PropTypes from "prop-types";
 import pluginId from "../../pluginId";
+import UploadFileForm from "../../components/UploadFileForm";
 import ExternalUrlForm from "../../components/ExternalUrlForm";
 import RawInputForm from "../../components/RawInputForm";
-import UploadFileForm from "../../components/UploadFileForm";
+import MappingTable from "../../components/MappingTable";
 
 import {
   HeaderNav,
@@ -12,6 +13,7 @@ import {
   PluginHeader
 } from "strapi-helper-plugin";
 import Row from "../../components/Row";
+import { Button } from "@buffetjs/core";
 import Block from "../../components/Block";
 import { Select, Label } from "@buffetjs/core";
 import { get, has, isEmpty, pickBy, set } from "lodash";
@@ -33,15 +35,44 @@ class HomePage extends Component {
     importSource: "upload",
     analyzing: false,
     analysis: null,
-    selectedContentType: ""
+    selectedContentType: "",
+    fieldMapping: {}
   };
+  onSaveImport = async () => {
+    const { selectedContentType, fieldMapping } = this.state;
+    const { analysisConfig } = this;
+    const importConfig = {
+      ...analysisConfig,
+      contentType: selectedContentType,
+      fieldMapping
+    };
+    try {
+      await request("/import-content", { method: "POST", body: importConfig });
+      this.setState({ saving: false }, () => {
+      strapi.notification.info("Import started");
+      });
+    } catch (e) {
+      strapi.notification.error(`${e}`);
+    }
+  };
+
+  getTargetModel = () => {
+    const { models } = this.state;
+    if (!models) return null;
+    return models.find(model => model.uid === this.state.selectedContentType);
+  };
+  
+  setFieldMapping = fieldMapping => {
+    this.setState({ fieldMapping });
+  };
+
   selectImportDest = selectedContentType => {
     this.setState({ selectedContentType });
   };
 
   componentDidMount() {
-      this.getModels().then(res => {
-      const { models, modelOptions } = res;
+    this.getModels().then((res) => {
+      const {models, modelOptions} = res
       this.setState({
         models,
         modelOptions,
@@ -53,7 +84,7 @@ class HomePage extends Component {
   getModels = async () => {
     this.setState({ loading: true });
     try {
-	  const response = await request("/content-type-builder/content-types", {
+      const response = await request("/content-type-builder/content-types", {
         method: "GET"
       });
 
@@ -97,7 +128,6 @@ class HomePage extends Component {
         });
       } catch (e) {
         this.setState({ analyzing: false }, () => {
-          strapi.notification.error(`Analyze Failed, try again`);
           strapi.notification.error(`${e}`);
         });
       }
@@ -176,6 +206,20 @@ class HomePage extends Component {
             </Row>
           </Block>
         </div>
+        {this.state.analysis && (
+          <Row className="row">
+            <MappingTable
+              analysis={this.state.analysis}
+              targetModel={this.getTargetModel()}
+              onChange={this.setFieldMapping}
+            />
+            <Button
+              style={{ marginTop: 12 }}
+              label={"Run the Import"}
+              onClick={this.onSaveImport}
+            />
+          </Row>
+        )}
       </div>
     );
   }
