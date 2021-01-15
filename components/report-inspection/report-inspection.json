@@ -2,7 +2,8 @@
   "collectionName": "components_report_inspection_report_inspections",
   "info": {
     "name": "report_inspection",
-    "icon": "bullseye"
+    "icon": "bullseye",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -28,7 +29,7 @@
       "type": "integer"
     },
     "defect": {
-      "type": "string"
+      "model": "defect"
     }
   }
 }

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "defects",
+  "info": {
+    "name": "defect"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "Nombre": {
+      "type": "string"
+    }
+  }
+}
