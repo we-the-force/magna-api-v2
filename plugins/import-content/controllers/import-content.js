@@ -37,7 +37,7 @@ module.exports = {
     ctx.send(record);
   },
 
-  delete: async (ctx) => {
+  delete: async ctx => {
     const importId = ctx.params.importId;
     const res = await strapi.query("importconfig", "import-content").delete({
       id: importId
@@ -61,12 +61,19 @@ module.exports = {
     ctx.send(importConfig);
   },
 
-  index: async (ctx) => {
-    // Add your own logic here.
-
-    // Send 200 `ok`
-    ctx.send({
-      message: 'ok'
-    });
+  index: async ctx => {
+      const entries = await strapi.query("importconfig", "import-content").find();
+      const withCounts = entries.map(entry => ({
+        ...entry,
+        importedCount: entry.importeditems.length,
+        importeditems: []
+      }));
+      const withName = withCounts.map(entry =>
+        ({
+          ...entry,
+          contentType: strapi.contentTypes[entry.contentType].info.name || 
+          entry.contentType
+        }))
+      ctx.send(withName);
   }
 };
