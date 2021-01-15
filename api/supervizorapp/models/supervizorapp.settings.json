@@ -19,6 +19,12 @@
     },
     "resolutionh": {
       "type": "integer"
+    },
+    "id_sin_defectos": {
+      "type": "integer"
+    },
+    "id_defecto_generico": {
+      "type": "integer"
     }
   }
 }
