@@ -5,7 +5,7 @@
       "path": "/",
       "handler": "import-content.index",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -13,7 +13,7 @@
       "path": "/:importId",
       "handler": "import-content.delete",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/:importId/undo",
       "handler": "import-content.undo",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -29,7 +29,7 @@
           "path": "/",
           "handler": "import-content.create",
           "config": {
-            "policies": []
+            "policies": ["isAdmin"]
           }
     },
     {
@@ -37,7 +37,7 @@
       "path": "/importconfig",
       "handler": "ImportConfig.find",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -45,7 +45,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.findOne",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/importconfig/count",
       "handler": "ImportConfig.count",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -61,7 +61,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.update",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -69,7 +69,7 @@
       "path": "/importconfig/:importId",
       "handler": "ImportConfig.delete",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -77,7 +77,7 @@
       "path": "/importeditem",
       "handler": "ImportedItem.find",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -85,7 +85,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.findOne",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -93,7 +93,7 @@
       "path": "/importeditem/count",
       "handler": "ImportedItem.count",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -101,7 +101,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.update",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     },
     {
@@ -109,7 +109,7 @@
       "path": "/importeditem/:importId",
       "handler": "ImportedItem.delete",
       "config": {
-        "policies": []
+        "policies": ["isAdmin"]
       }
     }
   ]
