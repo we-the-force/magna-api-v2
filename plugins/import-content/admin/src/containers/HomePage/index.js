@@ -122,9 +122,9 @@ class HomePage extends Component {
         const response = await request("/import-content/preAnalyzeImportFile", {
           method: "POST",
           body: analysisConfig,
-          headers: {
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEwNzUyNDgyLCJleHAiOjE2MTMzNDQ0ODJ9.O4n3SCR-2JJVxG-QMj_qGwOqp7n8b7EztUnbezI_UVs'
-          }
+          // headers: {
+          //   'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjEwNzUyNDgyLCJleHAiOjE2MTMzNDQ0ODJ9.O4n3SCR-2JJVxG-QMj_qGwOqp7n8b7EztUnbezI_UVs'
+          // }
         });
 
         this.setState({ analysis: response, analyzing: false }, () => {
