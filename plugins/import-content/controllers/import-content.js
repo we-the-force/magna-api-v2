@@ -15,8 +15,9 @@ module.exports = {
    */
   preAnalyzeImportFile: async (ctx) => {
     const services = strapi.plugins["import-content"].services;
+    console.log(services);
     try {
-      const data = await services["importcontent"].preAnalyzeImportFile(ctx);
+      const data = await services["import-content"].preAnalyzeImportFile(ctx);
       ctx.send(data);
     } catch (error) {
       console.log(error);
