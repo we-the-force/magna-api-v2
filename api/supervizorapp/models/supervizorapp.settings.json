@@ -25,6 +25,9 @@
     },
     "id_defecto_generico": {
       "type": "integer"
+    },
+    "inspecwithar": {
+      "type": "boolean"
     }
   }
 }
