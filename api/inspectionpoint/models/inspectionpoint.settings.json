@@ -23,6 +23,9 @@
     },
     "pointtype": {
       "model": "pointtype"
+    },
+    "description": {
+      "type": "string"
     }
   }
 }

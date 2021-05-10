@@ -7,13 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "good",
-        "bad"
-      ]
-    },
     "evidence": {
       "model": "file",
       "via": "related",
@@ -25,11 +18,17 @@
       "plugin": "upload",
       "required": false
     },
-    "operator_asigned_weld_id": {
-      "type": "integer"
-    },
     "defect": {
       "model": "defect"
+    },
+    "operator_asigned_weld_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "inspectionpoint": {
+      "model": "inspectionpoint"
     }
   }
 }

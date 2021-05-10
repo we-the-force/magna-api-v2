@@ -20,13 +20,16 @@
     "resolutionh": {
       "type": "integer"
     },
+    "inspect_with_ar": {
+      "type": "boolean"
+    },
     "id_sin_defectos": {
-      "type": "integer"
+      "type": "string"
     },
     "id_defecto_generico": {
-      "type": "integer"
+      "type": "string"
     },
-    "inspecwithar": {
+    "allways_show_inspection_point": {
       "type": "boolean"
     }
   }
