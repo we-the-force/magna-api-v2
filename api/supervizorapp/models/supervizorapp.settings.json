@@ -31,6 +31,18 @@
     },
     "allways_show_inspection_point": {
       "type": "boolean"
+    },
+    "IgnoreLockUndo": {
+      "type": "boolean",
+      "default": true
+    },
+    "IgnoreLockContinue": {
+      "type": "boolean",
+      "default": true
+    },
+    "NotifyReportPresentOnStartApp": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

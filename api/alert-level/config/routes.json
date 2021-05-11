@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/alert-levels",
+      "handler": "alert-level.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alert-levels/count",
+      "handler": "alert-level.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alert-levels/:id",
+      "handler": "alert-level.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/alert-levels",
+      "handler": "alert-level.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/alert-levels/:id",
+      "handler": "alert-level.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/alert-levels/:id",
+      "handler": "alert-level.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

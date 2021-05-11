@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supervisors",
+  "info": {
+    "name": "Supervisor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "whatsapp": {
+      "type": "biginteger"
+    },
+    "profile_pic": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "receive_notifications": {
+      "type": "boolean",
+      "default": true
+    },
+    "UnlockPassword": {
+      "type": "string"
+    },
+    "alert_levels": {
+      "via": "supervisors",
+      "collection": "alert-level"
+    }
+  }
+}

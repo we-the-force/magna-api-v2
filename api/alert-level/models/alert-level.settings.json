@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alert_levels",
+  "info": {
+    "name": "Alert Level",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "level": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "LockUndo": {
+      "type": "boolean",
+      "default": false
+    },
+    "LockContinue": {
+      "type": "boolean",
+      "default": false
+    },
+    "supervisors": {
+      "collection": "supervisor",
+      "via": "alert_levels",
+      "dominant": true
+    },
+    "defects": {
+      "via": "alert_level",
+      "collection": "defect"
+    }
+  }
+}
