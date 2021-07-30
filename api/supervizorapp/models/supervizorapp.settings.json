@@ -43,6 +43,33 @@
     "NotifyReportPresentOnStartApp": {
       "type": "boolean",
       "default": true
+    },
+    "resolutionw_defect": {
+      "type": "integer"
+    },
+    "resolutionh_defect": {
+      "type": "integer"
+    },
+    "capture_evidence_defect": {
+      "type": "boolean"
+    },
+    "capture_evidence_normal": {
+      "type": "boolean"
+    },
+    "user_code_pattern": {
+      "type": "string"
+    },
+    "user_code_separator": {
+      "type": "string"
+    },
+    "id_con_mejora": {
+      "type": "string"
+    },
+    "use_angle_lock": {
+      "type": "boolean"
+    },
+    "angle_lock_value": {
+      "type": "integer"
     }
   }
 }

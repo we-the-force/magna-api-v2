@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "pointtypes",
+  "collectionName": "inspectionpointhelpers",
   "info": {
-    "name": "pointtype",
+    "name": "inspectionpointhelper",
     "description": ""
   },
   "options": {
@@ -11,14 +11,11 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "name": {
+    "help_text": {
       "type": "string"
     },
-    "hex_color_code": {
-      "type": "string"
-    },
-    "symbol_image": {
-      "collection": "file",
+    "help_image": {
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "images",
@@ -27,6 +24,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "inspectionpoints": {
+      "via": "inspectionpointhelper",
+      "collection": "inspectionpoint"
     }
   }
 }

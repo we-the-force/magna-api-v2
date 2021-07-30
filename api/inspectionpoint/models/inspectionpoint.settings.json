@@ -26,6 +26,18 @@
     },
     "description": {
       "type": "string"
+    },
+    "real_name": {
+      "type": "string",
+      "default": "-"
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0
+    },
+    "inspectionpointhelper": {
+      "model": "inspectionpointhelper",
+      "via": "inspectionpoints"
     }
   }
 }

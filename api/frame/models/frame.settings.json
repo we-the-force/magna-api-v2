@@ -59,6 +59,12 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "model_short_name": {
+      "type": "string"
+    },
+    "name_in_app": {
+      "type": "string"
     }
   }
 }

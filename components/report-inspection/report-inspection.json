@@ -18,9 +18,6 @@
       "plugin": "upload",
       "required": false
     },
-    "defect": {
-      "model": "defect"
-    },
     "operator_asigned_weld_id": {
       "type": "string"
     },
@@ -29,6 +26,12 @@
     },
     "inspectionpoint": {
       "model": "inspectionpoint"
+    },
+    "defects": {
+      "collection": "defect"
+    },
+    "notes": {
+      "type": "string"
     }
   }
 }
