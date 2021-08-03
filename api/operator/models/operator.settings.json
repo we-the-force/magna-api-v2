@@ -26,9 +26,11 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "reports": {
+      "via": "operator",
       "collection": "report"
     }
   }
