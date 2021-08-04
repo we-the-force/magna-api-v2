@@ -38,6 +38,9 @@
     "inspectionpointhelper": {
       "model": "inspectionpointhelper",
       "via": "inspectionpoints"
+    },
+    "prefab_param": {
+      "type": "string"
     }
   }
 }
