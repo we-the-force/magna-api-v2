@@ -29,6 +29,7 @@ module.exports =  {
     } else {
       report = await strapi.services.report.create(ctx.request.body);
     }
+    console.info(report);
     if(report.report_inspection.length > 0){
 
       for (let inspection of report.report_inspection) {
@@ -40,11 +41,11 @@ module.exports =  {
                 qb.where('id', defect.id);
               })
               .fetch();
-
+              // console.info(result)
             const alert = result.toJSON();
             if (alert.supervisors.length > 0) {
               for (let supervisor of alert.supervisors) {
-                console.info(supervisor);
+                // console.info(supervisor);
                 if(supervisor.receive_notifications){
                   const msgBody =
                     "El operador: " +
