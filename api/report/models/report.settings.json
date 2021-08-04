@@ -33,6 +33,10 @@
     },
     "sector_id": {
       "type": "string"
+    },
+    "operator": {
+      "model": "operator",
+      "via": "reports"
     }
   }
 }
