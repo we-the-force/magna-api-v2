@@ -43,60 +43,59 @@ module.exports =  {
               })
               .fetch()
               .then((result) => {
-                console.log('resultado');
                 console.log(result);
-                const alert = result.toJSON();
-                if (alert.supervisors.length > 0) {
-                  for (let supervisor of alert.supervisors) {
-                    // console.info(supervisor);
-                    if(supervisor.receive_notifications){
-                      const msgBody =
-                        "El operador: " +
-                        report.operator.name +
-                        " levantó una Alerta nivel: " +
-                        alert.level +
-                        ", con el Código: " +
-                        alert.code +
-                        " y Descripción: " +
-                        alert.description +
-                        ", en el Chasis con el número de serie: " +
-                        report.frame_serial +
-                        " ";
-                      const recipient = "whatsapp:+521" + supervisor.whatsapp;
-                      client.messages
-                        .create({
-                          body: msgBody,
-                          from: "whatsapp:+14155238886",
-                          to: recipient,
-                        })
-                        .then((message) => console.log(message.sid))
-                        .done();
-                        if(supervisor.email!==''){
-                          await strapi.plugins['email'].services.email.send({
-                            to: supervisor.email,
-                            from: 'about@wetheforce.com',
-
-                            replyTo: 'about@wetheforce.com',
-                            subject: 'Alerta de producción',
-                            text: msgBody,
-                            html: msgBody,
-                          });
-                        } else {}
-
-
-                    } else {
-                      console.log('no notifications for supervisor');
-                    }
-
-
-                  }
-                } else {
-                  console.log('no supervisor');
-                }
+                console.log('resultado');
                 // expected output: "Success!"
               });
               // console.info(result)
+            const alert = result.toJSON();
+            if (alert.supervisors.length > 0) {
+              for (let supervisor of alert.supervisors) {
+                // console.info(supervisor);
+                if(supervisor.receive_notifications){
+                  const msgBody =
+                    "El operador: " +
+                    report.operator.name +
+                    " levantó una Alerta nivel: " +
+                    alert.level +
+                    ", con el Código: " +
+                    alert.code +
+                    " y Descripción: " +
+                    alert.description +
+                    ", en el Chasis con el número de serie: " +
+                    report.frame_serial +
+                    " ";
+                  const recipient = "whatsapp:+521" + supervisor.whatsapp;
+                  client.messages
+                    .create({
+                      body: msgBody,
+                      from: "whatsapp:+14155238886",
+                      to: recipient,
+                    })
+                    .then((message) => console.log(message.sid))
+                    .done();
+                    if(supervisor.email!==''){
+                      await strapi.plugins['email'].services.email.send({
+                        to: supervisor.email,
+                        from: 'about@wetheforce.com',
 
+                        replyTo: 'about@wetheforce.com',
+                        subject: 'Alerta de producción',
+                        text: msgBody,
+                        html: msgBody,
+                      });
+                    } else {}
+
+
+                } else {
+                  console.log('no notifications for supervisor');
+                }
+
+
+              }
+            } else {
+              console.log('no supervisor');
+            }
 
           }
 
