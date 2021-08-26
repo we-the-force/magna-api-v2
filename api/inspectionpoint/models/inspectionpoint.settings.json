@@ -41,6 +41,10 @@
     },
     "prefab_param": {
       "type": "string"
+    },
+    "ignore_view_direction": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
