@@ -39,10 +39,10 @@ module.exports =  {
             let result = async function(defect_Id) {
               return strapi.query("alert-level").find({ id: defect_Id });
             }
-            result(defect.alert_level).then(async function(resp) {
+            result(defect.alert_level).then(async function(alert) {
               console.log('resp query');
-              console.log(resp);
-              const alert = resp.json();
+              console.log(alert);
+              // const alert = resp.json();
               if (alert.supervisors.length > 0) {
                 for (let supervisor of alert.supervisors) {
                   // console.info(supervisor);
