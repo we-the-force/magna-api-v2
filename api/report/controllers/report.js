@@ -42,8 +42,8 @@ module.exports =  {
             result(defect.alert_level).then(async function(alert) {
               console.log('resp query');
               // console.log(alert);
-              console.info(alert);
-              console.info(alert.json());
+              console.info(alert.supervisors);
+              // console.info(alert.json());
               // const alert = resp.json();
               if (alert.supervisors.length > 0) {
                 for (let supervisor of alert.supervisors) {
