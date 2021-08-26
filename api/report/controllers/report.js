@@ -36,17 +36,19 @@ module.exports =  {
         console.info(inspection);
         if(inspection.defects.length > 0){
           for(let defect of inspection.defects){
-            const result = await strapi
-              .query('alert-level')
-              .model.query(qb => {
-                qb.where('id', defect.id);
-              })
-              .fetch()
-              .then((result) => {
+            const result = await strapi.query('alert-level').find({ id: defect.id });
+
+            // const result = await strapi
+            //   .query('alert-level')
+            //   .model.query(qb => {
+            //     qb.where('id', defect.id);
+            //   })
+            //   .fetch()
+            //   .then((result) => {
                 console.log(result);
                 console.log('resultado');
-                // expected output: "Success!"
-              });
+            //     // expected output: "Success!"
+            //   });
               // console.info(result)
             const alert = result.toJSON();
             if (alert.supervisors.length > 0) {
