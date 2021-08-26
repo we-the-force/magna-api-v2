@@ -36,7 +36,15 @@ module.exports =  {
         console.info(inspection);
         if(inspection.defects.length > 0){
           for(let defect of inspection.defects){
-            const result = await strapi.query('alert-level').find({ id: defect.id });
+            let result = async function(defect_Id) {
+              return strapi.query("alert-level").find({ id: defect_Id });
+            }
+            result(defect.id).then(resp => {
+              console.log('resp query');
+              console.log(resp);
+            }).catch(e => {
+              console.log('There has been a problem with your fetch operation: ' + e.message);
+            });
 
             // const result = await strapi
             //   .query('alert-level')
@@ -45,8 +53,7 @@ module.exports =  {
             //   })
             //   .fetch()
             //   .then((result) => {
-                console.log(result);
-                console.log('resultado');
+
             //     // expected output: "Success!"
             //   });
               // console.info(result)
