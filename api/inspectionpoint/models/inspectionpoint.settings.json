@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "inspectionpoints",
   "info": {
-    "name": "inspectionpoint",
+    "name": "Punto de inspeccion",
     "description": ""
   },
   "options": {
@@ -36,8 +36,15 @@
       "default": 0
     },
     "inspectionpointhelper": {
-      "model": "inspectionpointhelper",
-      "via": "inspectionpoints"
+      "via": "inspectionpoints",
+      "model": "inspectionpointhelper"
+    },
+    "prefab_param": {
+      "type": "string"
+    },
+    "ignore_view_direction": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
