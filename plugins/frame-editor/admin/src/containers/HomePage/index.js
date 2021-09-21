@@ -473,8 +473,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
               >
                 Open 3D Editor
               </ALink>
-             
-              
+
               <Separator style={{ marginTop: 37, marginBottom: 36 }} />
               <div className="row">
                 <div className="col-lg-6 col-md-12">
@@ -521,7 +520,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                           //   value: "",
                           // });
                           // setFrameSectorOptions(optionsSelect);
-                          inspectionP.sort(function(a, b) {
+                          inspectionP.sort(function (a, b) {
                             return a.order - b.order;
                           });
                           setInspectionPoints(inspectionP);
@@ -553,8 +552,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                             value={frameModelName}
                             // value={selectedFrame.model_name}
                             onChange={({ target: { value } }) => {
-                                setFrameModelName(value);
-                                
+                              setFrameModelName(value);
                             }}
                           />
                           <Label htmlFor="input">Model Number</Label>
@@ -564,10 +562,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                             value={frameModelNumber}
                             // value={selectedFrame.model_number}
                             onChange={({ target: { value } }) => {
-                              
-                                setFrameModelNumber(value);
-
-                              
+                              setFrameModelNumber(value);
                             }}
                           />
                           <Label htmlFor="input">Nómbre Corto</Label>
@@ -577,8 +572,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                             value={frameShortName}
                             // value={selectedFrame.model_short_name}
                             onChange={({ target: { value } }) => {
-                                setFrameShortName(value);
-
+                              setFrameShortName(value);
                             }}
                           />
 
@@ -596,20 +590,24 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                       return (
                         <>
                           <img
-                            src={
-                              selectedFrame.reference.formats.small.url
-                            }
+                            src={selectedFrame.reference.formats.small.url}
                             style={{ width: "100%" }}
                             alt=""
                           />
                           <Button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            saveFrame(
-                              selectedFrame.id, frameModelName, frameModelNumber, frameShortName
-                            );
-                          }}
-                          color="green">Guardar</Button>
+                            onClick={(e) => {
+                              e.preventDefault();
+                              saveFrame(
+                                selectedFrame.id,
+                                frameModelName,
+                                frameModelNumber,
+                                frameShortName
+                              );
+                            }}
+                            color="green"
+                          >
+                            Guardar
+                          </Button>
                         </>
                       );
                     } else {
@@ -627,15 +625,15 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                     Arrastra y suelta para ordenar. Selecciona para ver Helpers.
                   </p>
                   <DragDropContext onDragEnd={onDragEnd}>
-                    <Table singleLine selectable>
+                    <Table selectable>
                       <Table.Header>
                         <Table.Row>
-                          <Table.HeaderCell />
+                          <Table.HeaderCell collapsing/>
 
                           <Table.HeaderCell>Nombre</Table.HeaderCell>
                           <Table.HeaderCell>Descripción</Table.HeaderCell>
                           <Table.HeaderCell>Clase</Table.HeaderCell>
-                          <Table.HeaderCell>Color</Table.HeaderCell>
+                          <Table.HeaderCell width={1}>Color</Table.HeaderCell>
                           <Table.HeaderCell>Tipo</Table.HeaderCell>
                           <Table.HeaderCell>Referencia</Table.HeaderCell>
                           <Table.HeaderCell></Table.HeaderCell>
@@ -664,7 +662,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                           key={inspectionPoint.id}
                                           className="project"
                                         >
-                                          <Table.Cell>
+                                          <Table.Cell collapsing>
                                             {/* <Icon
                                               name="bars"
                                               color="grey"
@@ -694,6 +692,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                               //   );
                                               // }}
                                             >
+                                              
                                               {inspectionPoint.point_type}
                                               {(() => {
                                                 if (
@@ -701,9 +700,10 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                   null
                                                 ) {
                                                   if (
-                                                    inspectionPoint.point_type_image.formats !=
-                                                    null
-                                                  ) { 
+                                                    inspectionPoint
+                                                      .point_type_image
+                                                      .formats != null
+                                                  ) {
                                                     return (
                                                       <>
                                                         <img
@@ -712,7 +712,10 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.point_type_image.formats.thumbnail.url
+                                                            inspectionPoint
+                                                              .point_type_image
+                                                              .formats.thumbnail
+                                                              .url
                                                           }
                                                           alt=""
                                                         />
@@ -727,19 +730,19 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.point_type_image.url
+                                                            inspectionPoint
+                                                              .point_type_image
+                                                              .url
                                                           }
                                                           alt=""
                                                         />
                                                       </>
-                                                    )
+                                                    );
                                                   }
-                                                  
                                                 } else {
                                                   return "";
                                                 }
                                               })()}
-                                              
                                             </a>
                                           </Table.Cell>
                                           <Table.Cell
@@ -761,15 +764,18 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                               //   );
                                               // }}
                                             >
+                                              
                                               {inspectionPoint.helper}
+
+                                              
                                               {(() => {
                                                 if (
                                                   inspectionPoint.helper_image !=
                                                   null
                                                 ) {
                                                   if (
-                                                    inspectionPoint.helper_image.formats !=
-                                                    null
+                                                    inspectionPoint.helper_image
+                                                      .formats != null
                                                   ) {
                                                     return (
                                                       <>
@@ -779,7 +785,10 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.helper_image.formats.thumbnail.url
+                                                            inspectionPoint
+                                                              .helper_image
+                                                              .formats.thumbnail
+                                                              .url
                                                           }
                                                           alt=""
                                                         />
@@ -794,20 +803,19 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.helper_image.url
+                                                            inspectionPoint
+                                                              .helper_image.url
                                                           }
                                                           alt=""
                                                         />
                                                       </>
-                                                    )
+                                                    );
                                                   }
-                                                  
                                                 } else {
                                                   return "";
                                                 }
                                               })()}
                                               
-
                                             </a>
                                           </Table.Cell>
                                           <Table.Cell>
@@ -824,15 +832,18 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                               //   );
                                               // }}
                                             >
-                                              {inspectionPoint.reference.help_text}
+                                              {
+                                                inspectionPoint.reference
+                                                  .help_text
+                                              }
                                               {(() => {
                                                 if (
                                                   inspectionPoint.help_image !=
                                                   null
                                                 ) {
                                                   if (
-                                                    inspectionPoint.help_image.formats !=
-                                                    null
+                                                    inspectionPoint.help_image
+                                                      .formats != null
                                                   ) {
                                                     return (
                                                       <>
@@ -842,7 +853,10 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.help_image.formats.thumbnail.url
+                                                            inspectionPoint
+                                                              .help_image
+                                                              .formats.thumbnail
+                                                              .url
                                                           }
                                                           alt=""
                                                         />
@@ -857,20 +871,18 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                             marginLeft: 15,
                                                           }}
                                                           src={
-                                                            inspectionPoint.help_image.url
+                                                            inspectionPoint
+                                                              .help_image.url
                                                           }
                                                           alt=""
                                                         />
                                                       </>
-                                                    )
+                                                    );
                                                   }
-                                                  
                                                 } else {
                                                   return "";
                                                 }
                                               })()}
-                                              
-
                                             </a>
                                           </Table.Cell>
                                           <Table.Cell>
@@ -946,7 +958,6 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                  </Table>
               </Block> */}
           </div>
-          
         </div>
       </Container>
     </>
