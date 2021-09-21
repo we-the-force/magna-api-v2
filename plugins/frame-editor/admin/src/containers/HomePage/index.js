@@ -306,7 +306,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
               method: "GET",
             }
           ).then((response) => {
-            // console.log(response);
+            console.log(response);
             return response;
           });
           let helper = await request(
@@ -315,7 +315,16 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
               method: "GET",
             }
           ).then((response) => {
-            // console.log(response);
+            console.log(response);
+            return response;
+          });
+          let reference = await request(
+            "/inspectionpointhelpers/" + inspectionP.inspectionpointhelper,
+            {
+              method: "GET",
+            }
+          ).then((response) => {
+            console.log(response);
             return response;
           });
           // const helper = await request(
@@ -337,7 +346,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
             description: inspectionP.description,
             // point_type: inspectionP.pointtype,
             point_type_id: inspectionP.pointtype,
-            
+            reference: reference,
             point_type_image: pointType.symbol_image,
             point_type: pointType.name,
             color: '#'+pointType.hex_color_code,
@@ -349,7 +358,7 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
           };
         }
       ));
-      // console.log(inspectionPoints);
+      console.log(inspectionPoints);
       return inspectionPoints;
     } catch (e) {
         strapi.notification.error(`${e}`);
@@ -627,7 +636,8 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                           <Table.HeaderCell>Descripción</Table.HeaderCell>
                           <Table.HeaderCell>Clase</Table.HeaderCell>
                           <Table.HeaderCell>Color</Table.HeaderCell>
-                          <Table.HeaderCell>Ayuda</Table.HeaderCell>
+                          <Table.HeaderCell>Tipo</Table.HeaderCell>
+                          <Table.HeaderCell>Referencia</Table.HeaderCell>
                           <Table.HeaderCell></Table.HeaderCell>
                         </Table.Row>
                       </Table.Header>
@@ -690,20 +700,41 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                   inspectionPoint.point_type_image !=
                                                   null
                                                 ) {
-                                                  return (
-                                                    <>
-                                                      <img
-                                                        style={{
-                                                          height: 25,
-                                                          marginLeft: 15,
-                                                        }}
-                                                        src={
-                                                          inspectionPoint.point_type_image.formats.thumbnail.url
-                                                        }
-                                                        alt=""
-                                                      />
-                                                    </>
-                                                  );
+                                                  if (
+                                                    inspectionPoint.point_type_image.formats !=
+                                                    null
+                                                  ) { 
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.point_type_image.formats.thumbnail.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    );
+                                                  } else {
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.point_type_image.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    )
+                                                  }
+                                                  
                                                 } else {
                                                   return "";
                                                 }
@@ -736,20 +767,104 @@ const saveInspectionPointOrder = async (inspectionPointId, Order) => {
                                                   inspectionPoint.helper_image !=
                                                   null
                                                 ) {
-                                                  return (
-                                                    <>
-                                                      <img
-                                                        style={{
-                                                          height: 25,
-                                                          marginLeft: 15,
-                                                        }}
-                                                        src={
-                                                          inspectionPoint.helper_image.formats.thumbnail.url
-                                                        }
-                                                        alt=""
-                                                      />
-                                                    </>
-                                                  );
+                                                  if (
+                                                    inspectionPoint.helper_image.formats !=
+                                                    null
+                                                  ) {
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.helper_image.formats.thumbnail.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    );
+                                                  } else {
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.helper_image.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    )
+                                                  }
+                                                  
+                                                } else {
+                                                  return "";
+                                                }
+                                              })()}
+                                              
+
+                                            </a>
+                                          </Table.Cell>
+                                          <Table.Cell>
+                                            <a
+                                              href={
+                                                "content-manager/collectionType/application::inspectionpointhelper.inspectionpointhelper/" +
+                                                inspectionPoint.reference.id
+                                              }
+                                              target="_blank"
+                                              // onClick={(e) => {
+                                              //   e.preventDefault();
+                                              //   fetchHelper(
+                                              //     inspectionPoint.helper
+                                              //   );
+                                              // }}
+                                            >
+                                              {inspectionPoint.reference.help_text}
+                                              {(() => {
+                                                if (
+                                                  inspectionPoint.help_image !=
+                                                  null
+                                                ) {
+                                                  if (
+                                                    inspectionPoint.help_image.formats !=
+                                                    null
+                                                  ) {
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.help_image.formats.thumbnail.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    );
+                                                  } else {
+                                                    return (
+                                                      <>
+                                                        <img
+                                                          style={{
+                                                            height: 25,
+                                                            marginLeft: 15,
+                                                          }}
+                                                          src={
+                                                            inspectionPoint.help_image.url
+                                                          }
+                                                          alt=""
+                                                        />
+                                                      </>
+                                                    )
+                                                  }
+                                                  
                                                 } else {
                                                   return "";
                                                 }
