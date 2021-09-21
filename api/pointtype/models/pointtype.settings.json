@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "pointtypes",
   "info": {
-    "name": "pointtype",
+    "name": "Clasificacion",
     "description": ""
   },
   "options": {
@@ -26,7 +26,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

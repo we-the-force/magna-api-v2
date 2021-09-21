@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "inspectionpointhelpers",
   "info": {
-    "name": "inspectionpointhelper",
+    "name": "Referencia",
     "description": ""
   },
   "options": {
@@ -23,7 +23,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "inspectionpoints": {
       "via": "inspectionpointhelper",
