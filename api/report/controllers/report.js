@@ -15,7 +15,7 @@ const { parseMultipartData, sanitizeEntity } = require("strapi-utils");
 const { info } = require("strapi-utils/lib/logger");
 
 module.exports =  {
-  /**
+  /*
    * Create a record.
    *
    * @return {Object}

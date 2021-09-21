@@ -9,7 +9,6 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "content-type-parser": "1.0.2",
     "csv-parse": "4.8.2",
@@ -18,22 +17,30 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "mysql": "latest",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-iframe": "^1.8.0",
     "request": "^2.88.2",
     "rss-parser": "3.7.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
     "simple-statistics": "7.0.7",
     "sqlite3": "^5.0.2",
-    "strapi": "3.6.3",
-    "strapi-admin": "3.6.3",
-    "strapi-connector-bookshelf": "3.6.3",
-    "strapi-connector-mongoose": "3.6.3",
-    "strapi-plugin-content-manager": "3.6.3",
-    "strapi-plugin-content-type-builder": "3.6.3",
-    "strapi-plugin-email": "3.6.3",
-    "strapi-plugin-graphql": "3.6.3",
-    "strapi-plugin-upload": "3.6.3",
-    "strapi-plugin-users-permissions": "3.6.3",
-    "strapi-utils": "3.6.3",
+    "strapi": "3.6.1",
+    "strapi-admin": "3.6.1",
+    "strapi-connector-bookshelf": "3.6.1",
+    "strapi-connector-mongoose": "3.6.1",
+    "strapi-plugin-content-manager": "3.6.1",
+    "strapi-plugin-content-type-builder": "3.6.1",
+    "strapi-plugin-documentation": "3.6.1",
+    "strapi-plugin-email": "3.6.1",
+    "strapi-plugin-graphql": "3.6.1",
+    "strapi-plugin-import-export-content": "^0.4.1",
+    "strapi-plugin-upload": "3.6.1",
+    "strapi-plugin-users-permissions": "3.6.1",
+    "strapi-utils": "3.6.1",
     "striptags": "3.1.1",
+    "styled-components": "5.3.0",
     "twilio": "^3.66.1"
   },
   "author": {
@@ -46,5 +53,6 @@
     "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {}
 }
