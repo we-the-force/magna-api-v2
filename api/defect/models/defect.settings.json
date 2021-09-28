@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "defects",
   "info": {
-    "name": "defect",
+    "name": "Defectos",
     "description": ""
   },
   "options": {
@@ -15,8 +15,8 @@
       "type": "string"
     },
     "alert_level": {
-      "model": "alert-level",
-      "via": "defects"
+      "via": "defects",
+      "model": "alert-level"
     }
   }
 }

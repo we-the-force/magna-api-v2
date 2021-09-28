@@ -43,8 +43,8 @@
       "collection": "report"
     },
     "sectors": {
-      "collection": "sector",
-      "via": "frame"
+      "via": "frame",
+      "collection": "sector"
     },
     "operator_id": {
       "type": "string"

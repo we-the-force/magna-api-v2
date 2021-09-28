@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "supervisors",
   "info": {
-    "name": "Supervisor",
+    "name": "Supervisores",
     "description": ""
   },
   "options": {
@@ -29,7 +29,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "receive_notifications": {
       "type": "boolean",

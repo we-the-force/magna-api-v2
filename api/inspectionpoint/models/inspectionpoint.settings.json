@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "inspectionpoints",
   "info": {
-    "name": "Punto de inspeccion",
+    "name": "Punto de inspecciones",
     "description": ""
   },
   "options": {
@@ -15,8 +15,8 @@
       "type": "string"
     },
     "sector": {
-      "model": "sector",
-      "via": "inspectionpoints"
+      "via": "inspectionpoints",
+      "model": "sector"
     },
     "helper": {
       "model": "helper"
