@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "sectors",
   "info": {
-    "name": "sector",
+    "name": "Sectores",
     "description": ""
   },
   "options": {

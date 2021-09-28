@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "reports",
   "info": {
-    "name": "report",
+    "name": "Reportes",
     "description": ""
   },
   "options": {
@@ -35,8 +35,8 @@
       "type": "string"
     },
     "operator": {
-      "model": "operator",
-      "via": "reports"
+      "via": "reports",
+      "model": "operator"
     }
   }
 }

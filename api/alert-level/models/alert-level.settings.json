@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "alert_levels",
   "info": {
-    "name": "Alert Level",
+    "name": "Alertas",
     "description": ""
   },
   "options": {
@@ -29,8 +29,8 @@
       "default": false
     },
     "supervisors": {
-      "collection": "supervisor",
       "via": "alert_levels",
+      "collection": "supervisor",
       "dominant": true
     },
     "defects": {
