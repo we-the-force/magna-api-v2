@@ -30,7 +30,7 @@
     align-items: center;
     padding-right: 10px !important;
     border-radius: 30px;
-    background: #EC1B23;
+    background: #000;
     margin: 0px !important;
     z-index: 0;
 }
@@ -72,8 +72,8 @@
 }
 
 .indice .index-static {
-    border-top: 2px solid #EC1B23;
-    border-image-source: linear-gradient(45deg, #ec1b23, #F8F8F8);
+    border-top: 2px solid #000;
+    border-image-source: linear-gradient(45deg, #000, #F8F8F8);
     border-image-slice: 1;
     margin-top: 20px;
     margin-bottom: 0px;

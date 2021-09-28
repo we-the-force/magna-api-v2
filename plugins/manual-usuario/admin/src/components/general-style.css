@@ -19,7 +19,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
-    color: #EC1B23;
+    color: #000;
 }
 
 .card .links {
@@ -78,8 +78,8 @@
 }
 
 .card .errores {
-    border-top: 2px solid #EC1B23;
-    border-image-source: linear-gradient(45deg, #ec1b23, #F8F8F8);
+    border-top: 2px solid #000;
+    border-image-source: linear-gradient(45deg, #000, #F8F8F8);
     border-image-slice: 1;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -94,7 +94,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    color: #EC1B23;
+    color: #000;
     margin: 0px !important;
     padding: 0px !important;
 }
