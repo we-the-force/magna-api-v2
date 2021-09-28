@@ -626,6 +626,12 @@
                 "inspectionpointhelper": {
                   "type": "string"
                 },
+                "prefab_param": {
+                  "type": "string"
+                },
+                "ignore_view_direction": {
+                  "type": "boolean"
+                },
                 "created_by": {
                   "type": "string"
                 },
