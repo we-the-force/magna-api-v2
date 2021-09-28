@@ -659,6 +659,13 @@
                 "type": "string"
               }
             }
+          },
+          "prefab_param": {
+            "type": "string"
+          },
+          "ignore_view_direction": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -689,6 +696,13 @@
           },
           "inspectionpointhelper": {
             "type": "string"
+          },
+          "prefab_param": {
+            "type": "string"
+          },
+          "ignore_view_direction": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

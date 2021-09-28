@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/21/2021 1:51:33 PM"
+    "x-generation-date": "09/21/2021 3:42:46 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9249,6 +9249,13 @@
                 "type": "string"
               }
             }
+          },
+          "prefab_param": {
+            "type": "string"
+          },
+          "ignore_view_direction": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -9279,6 +9286,13 @@
           },
           "inspectionpointhelper": {
             "type": "string"
+          },
+          "prefab_param": {
+            "type": "string"
+          },
+          "ignore_view_direction": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"
@@ -9399,6 +9413,12 @@
                 },
                 "inspectionpointhelper": {
                   "type": "string"
+                },
+                "prefab_param": {
+                  "type": "string"
+                },
+                "ignore_view_direction": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
@@ -9810,6 +9830,12 @@
                     "inspectionpointhelper": {
                       "type": "string"
                     },
+                    "prefab_param": {
+                      "type": "string"
+                    },
+                    "ignore_view_direction": {
+                      "type": "boolean"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -10018,6 +10044,12 @@
                     "inspectionpointhelper": {
                       "type": "string"
                     },
+                    "prefab_param": {
+                      "type": "string"
+                    },
+                    "ignore_view_direction": {
+                      "type": "boolean"
+                    },
                     "created_by": {
                       "type": "string"
                     },
@@ -10185,6 +10217,12 @@
                 },
                 "inspectionpointhelper": {
                   "type": "string"
+                },
+                "prefab_param": {
+                  "type": "string"
+                },
+                "ignore_view_direction": {
+                  "type": "boolean"
                 },
                 "created_by": {
                   "type": "string"
