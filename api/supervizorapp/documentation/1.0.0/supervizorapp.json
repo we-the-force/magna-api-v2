@@ -581,6 +581,9 @@
           },
           "angle_lock_value": {
             "type": "integer"
+          },
+          "show_user_capture_option": {
+            "type": "boolean"
           }
         }
       },
@@ -645,6 +648,9 @@
           },
           "angle_lock_value": {
             "type": "integer"
+          },
+          "show_user_capture_option": {
+            "type": "boolean"
           },
           "created_by": {
             "type": "string"
